@@ -7,6 +7,8 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import './styles.css';
+
 import { data } from '../../data';
 
 const styles = theme => ({
@@ -28,13 +30,13 @@ function SimpleExpansionPanel(props) {
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>My age is - {data.age}</Typography>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          <ExpansionPanelDetails className="details-wrapper">
               {Object
                 .keys(data)
                 .map(prop => 
                   (<div key={prop}>
-                    <span className="title">{prop}:</span>
-                    <span className="value">{data[prop]}</span>
+                    <span className="title">{prop}: </span>
+                    <span className="value">{Array.isArray(data[prop]) ? data[prop].join(', ') : data[prop]}</span>
                   </div>)
                 )
               }

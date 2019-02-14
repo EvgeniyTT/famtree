@@ -1,0 +1,7 @@
+.details-wrapper {
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 700;
+}
