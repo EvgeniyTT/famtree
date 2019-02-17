@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import Leaf from './components/Leaf';
 import PersonDetails from './components/DetailsSection';
+import Dialog from './components/Dialog';
 
 const styles = theme => ({
   root: {
@@ -20,7 +21,10 @@ function App(props) {
   return (
     <div className={classes.root}>
       <Leaf />
-      <PersonDetails />
+      <Dialog>
+        <PersonDetails />
+      </Dialog>
+      
     </div>
   );
 }
